@@ -9,8 +9,8 @@ function TodoList() {
         if (newTask.trim() !== '') {
             // Define uma função 'addTask' para adicionar uma nova tarefa à
             //lista.
-                // Verifica se 'newTask' não está vazio.
-                setTasks([...tasks, newTask]);
+            // Verifica se 'newTask' não está vazio.
+            setTasks([...tasks, newTask]);
             // Usa 'setTasks' para adicionar a nova tarefa ao array 'tasks'.
             setNewTask('');
             // Limpa o campo de entrada 'newTask'.
