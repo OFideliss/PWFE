@@ -7,7 +7,7 @@
             <li v-for="(livro, index) in livros" :key="index">
                 {{ livro.titulo }}
                 <button @click="alternarStatus(livro)">Marcar como {{
-                    livro.assistido ? 'Não Assistido' : 'Assistido' }}</button>
+                    livro.lido ? 'Não Lido' : 'Lido' }}</button>
 
             </li>
         </ul>
@@ -24,13 +24,13 @@ export default {
     },
     methods: {
         adicionarLivro() {
-            if (this.novolivro.trim() !== "") {
-                this.livros.push({ titulo: this.novoLivro, assistido: false });
+            if (this.novoLivro.trim() !== "") {
+                this.livros.push({ titulo: this.novoLivro, lido: false });
                 this.novolivro = "";
             }
         },
         alternarStatus(livro) {
-            livro.assistido = !livro.assistido;
+            livro.lido = !livro.lido;
         },
     },
 };
