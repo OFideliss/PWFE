@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo de Mapa com Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Estilo para o elemento do mapa */
+        #map {
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Elemento onde o mapa será exibido -->
+    <div id="map"></div>
+
+    <!-- Inclusão da biblioteca Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        // Inicializa o mapa
+        var map = L.map('map').setView([-22.5699, -47.34009], 13); // Define o centro do mapa e o nível de zoom
+
+        // Adiciona o provedor de mapa do OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <\a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Adiciona um marcador ao mapa
+        L.marker([-22.5699, -47.3400]).addTo(map)
+            .bindPopup('MegaPet Mart').openPopup();
+        L.marker([-20.5699, -47.3400]).addTo(map)
+            .bindPopup('MegaPet Mart').openPopup();
+    </script>
+
+</body>
+
+</html>
